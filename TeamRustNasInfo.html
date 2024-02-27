@@ -33,11 +33,14 @@
             for i,j in zip(klist, on_off_list): p(f'<p> {i} ••• {j} </p><br>')
             p('<br><br>')
             hyperlink(ip)
+            iptest = Element('iptest')
+            intest.element.innerText = ip
             def go():
                 output.element.innerText = value
             go()
         </py-script>
         <div id = 'output'></div>
+        <div id = 'iptest'></div>
         <a href = './ServerNotOpened' id = 'link'> 서버 OS 페이지 접속하기 </a><br><br><br>
         <img src = 'RPI.jpg' />
         <p> RPI (Raspberry PI)는 라즈베리 파이 입니다. </p>
