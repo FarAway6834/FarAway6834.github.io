@@ -24,8 +24,8 @@
             from pyodide.ffi import to_js, to_py
             
             def show_json_data():
-                global betaData  # 여기서 global 키워드를 올바르게 사용합니다.
-                betaData = to_py(alphaData)  # alphaData를 Python 딕셔너리로 변환합니다.
+                global betaData
+                betaData = to_py(alphaData)
             
             show_json_data()
             
@@ -45,7 +45,7 @@
                 link = Element('link')
 
                 def p(x):
-                    nonlocal value  # 여기서 nonlocal 키워드를 사용하여 내부 함수에서 외부 함수의 변수를 수정합니다.
+                    nonlocal value
                     value += x + '\n'
 
                 if ip:
