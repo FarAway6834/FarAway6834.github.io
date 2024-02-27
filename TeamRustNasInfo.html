@@ -19,7 +19,7 @@
             configurations = [0,0,0,0,0,0,0,0,0,0,127,0,0,1]
             #=========================#
             on_off_list = configurations[:10]
-            ip = on_off_list[10:]
+            ip = configurations[10:]
             if len(ip) == 1:ip = ip[0]
             iptest = Element('iptest')
             iptest.element.innerText = ip
