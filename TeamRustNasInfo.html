@@ -19,7 +19,7 @@
             output = Element('output')
             def p(x):
                 global value
-                value += x
+                value += x + '\n'
             if ip:ip = 'http://'+'.'.join(ip)
             else:ip = './404'
             on_off_list = ['ON' if i else 'OFF' for i in on_off_list]
