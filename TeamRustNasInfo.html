@@ -28,7 +28,7 @@
             def p(x):
                 global value
                 value += x + '\n'
-            if ip:ip = 'http://'+'.'.join(ip)
+            if ip:ip = 'http://'+'.'.join(list(map(str, ip)))
             else:ip = './ServerNotOpened'
             on_off_list = ['ON' if i else 'OFF' for i in on_off_list]
             for i,j in zip(klist, on_off_list): p(f'<p> {i} ••• {j} </p><br>')
