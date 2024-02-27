@@ -10,10 +10,12 @@
     <body>
         <h1> TeamRustNaS계기판 </h1>
         <py-script>
-            #=====Configuration======#
-            on_off_list = [0,0,0,0,0,0,0,0,0,0]
-            ip = 0
-            #========================#
+            #======Configuration======#
+            configurations = [0,0,0,0,0,0,0,0,0,0,0]
+            #=========================#
+            on_off_list = configurations[:10]
+            ip = on_off_list[10:]
+            if len(ip) == 1:ip = ip[0)
             klist = ["알칼리 건전지 인버터 기반 건전지 사용 다회용 보조배터리 준비", "알칼리 전지", "보조배터리 준비", "충전장치", "전원전류", "서버 디바이스 준비", "제어 가능한 Wi-Fi 준비", "랜선 (이더넷 캐이블) 연결", "포트포워딩", "RPI NaS 서버"]
             value = ''
             output = Element('output')
@@ -22,7 +24,7 @@
                 global value
                 value += x + '\n'
             if ip:ip = 'http://'+'.'.join(ip)
-            else:ip = './404'
+            else:ip = './ServerNotOpened'
             on_off_list = ['ON' if i else 'OFF' for i in on_off_list]
             for i,j in zip(klist, on_off_list): p(f'<p> {i} ••• {j} </p><br>')
             p('<br><br>')
@@ -32,7 +34,7 @@
             go()
         </py-script>
         <div id = 'output'></div>
-        <a href = './404' id = 'link'> 서버 OS 페이지 접속하기 </a><br><br><br>
+        <a href = './ServerNotOpened' id = 'link'> 서버 OS 페이지 접속하기 </a><br><br><br>
         <img src = 'RPI.jpg' />
         <p> RPI (Raspberry PI)는 라즈베리 파이 입니다. </p>
         
