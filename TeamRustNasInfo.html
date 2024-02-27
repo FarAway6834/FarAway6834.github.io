@@ -11,12 +11,12 @@
         <h1> TeamRustNaS계기판 </h1>
         <py-script>
             from js import document
-            from urllib.request import urlopen as o
-            from json import load as l
             betaData = {}
             def show_json_data():
                 globals betaData
-                betaData = l(o('http://farway6834.github.io/TeamRustNaS.json'))
+                betaData = {
+                    'ServerState' : [0,0,0,0,0,0,0,0,0,0,0,0]
+                }
             show_json_data()
 
             def hyperlink(x):
