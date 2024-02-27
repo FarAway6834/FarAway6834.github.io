@@ -11,12 +11,18 @@
         <h1> TeamRustNaS계기판 </h1>
         <py-script>
             from js import document
+            from js import fetch
 
             def hyperlink(x):
                 link = document.getElementById('link')
                 link.href = x
+
+            async def load_and_parse_json():
+                response = await fetch('./TeamRustNaS.json')
+                json_data = await response.json()
+                return json_data
             #======Configuration======#
-            configurations = [0,0,0,0,0,0,0,0,0,0,0]
+            configurations = load_and_parse_json()['ServerState']
             #=========================#
             on_off_list = configurations[:10]
             ip = on_off_list[10:]
