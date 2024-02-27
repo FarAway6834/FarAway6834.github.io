@@ -14,12 +14,13 @@
             ip = 0
             #========================#
             klist = ["알칼리 건전지 인버터 기반 건전지 사용 다회용 보조배터리 준비", "알칼리 전지", "보조배터리 준비", "충전장치", "전원전류", "서버 디바이스 준비", "제어 가능한 Wi-Fi 준비", "랜선 (이더넷 캐이블) 연결", "포트포워딩", "RPI NaS 서버"]
+            p = print
             if ip:ip = 'http://'+'.'.join(ip)
             else:ip = './404'
             on_off_list = ['ON' for i in on_off_list if i else 'OFF']
-            for i,j in zip(klist, on_off_list): document.write(f'<p> {i} ••• {j} </p><br>
-            docment.write('<br><br>')
-            docment.write(f'<a href = {ip}> 서버 OS 페이지 접속하기 </a><br><br><br>
+            for i,j in zip(klist, on_off_list): p(f'<p> {i} ••• {j} </p><br>
+            p('<br><br>')
+            p(f'<a href = {ip}> 서버 OS 페이지 접속하기 </a><br><br><br>
         </py-script>
         <img src = 'RPI.jpg' />
         <p> RPI (Raspberry PI)는 라즈베리 파이 입니다. </p>
