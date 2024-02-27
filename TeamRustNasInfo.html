@@ -10,6 +10,11 @@
     <body>
         <h1> TeamRustNaS계기판 </h1>
         <py-script>
+            from js import document
+
+            def hyperlink(x):
+                link = document.getElementById('link')
+                link.href = x
             #======Configuration======#
             configurations = [0,0,0,0,0,0,0,0,0,0,0]
             #=========================#
@@ -28,7 +33,7 @@
             on_off_list = ['ON' if i else 'OFF' for i in on_off_list]
             for i,j in zip(klist, on_off_list): p(f'<p> {i} ••• {j} </p><br>')
             p('<br><br>')
-            link.setAttribute('href', ip)
+            hyperlink(ip)
             def go():
                 output.element.innerText = value
             go()
