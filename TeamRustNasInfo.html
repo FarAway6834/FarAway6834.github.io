@@ -21,20 +21,9 @@
         </script>
         <py-script>
             from js import document, alphaData
-            from pyodide.ffi import to_js, to_py
-            
-            def show_json_data():
-                global betaData
-                betaData = to_py(alphaData)
-            
-            show_json_data()
-            
-            def hyperlink(url):
-                link = document.getElementById('link')
-                link.href = url
             
             def update_dashboard():
-                configurations = betaData['ServerState']
+                configurations = alphaData['ServerState']
                 on_off_list = configurations[:10]
                 ip = configurations[10:]
                 if len(ip) == 1:
