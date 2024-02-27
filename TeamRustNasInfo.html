@@ -29,12 +29,12 @@
                 if len(ip) == 1:
                     ip = ip[0]
                 klist = ["알칼리 건전지 인버터 기반 건전지 사용 다회용 보조배터리 준비", "알칼리 전지", "보조배터리 준비", "충전장치", "전원전류", "서버 디바이스 준비", "제어 가능한 Wi-Fi 준비", "랜선 (이더넷 캐이블) 연결", "포트포워딩", "RPI NaS 서버"]
-                value = ''
                 output = Element('output')
                 link = Element('link')
 
+                value = ''
                 def p(x):
-                    nonlocal value
+                    global value
                     value += x + '\n'
 
                 if ip:
@@ -47,10 +47,10 @@
                 p('<br><br>')
                 hyperlink(ip)
 
-                def go():
-                    output.element.innerText = value
+                def go(x):
+                    output.element.innerHTML = x
 
-                go()
+                go(value)
         </py-script>
 
         <div id = 'output'></div>
