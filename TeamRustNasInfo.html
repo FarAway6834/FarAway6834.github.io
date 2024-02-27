@@ -10,20 +10,8 @@
     <body>
         <h1> TeamRustNaS계기판 </h1>
         <py-script>
-            from js import document
-            betaData = {}
-            def show_json_data():
-                globals betaData
-                betaData = {
-                    'ServerState' : [0,0,0,0,0,0,0,0,0,0,0,0]
-                }
-            show_json_data()
-
-            def hyperlink(x):
-                link = document.getElementById('link')
-                link.href = x
             #======Configuration======#
-            configurations = betaData['ServerState']
+            configurations = [0,0,0,0,0,0,0,0,0,0,0]
             #=========================#
             on_off_list = configurations[:10]
             ip = on_off_list[10:]
@@ -40,7 +28,7 @@
             on_off_list = ['ON' if i else 'OFF' for i in on_off_list]
             for i,j in zip(klist, on_off_list): p(f'<p> {i} ••• {j} </p><br>')
             p('<br><br>')
-            hyperlink(ip)
+            link.setAttribute('href', ip)
             def go():
                 output.element.innerText = value
             go()
@@ -49,6 +37,6 @@
         <a href = './ServerNotOpened' id = 'link'> 서버 OS 페이지 접속하기 </a><br><br><br>
         <img src = 'RPI.jpg' />
         <p> RPI (Raspberry PI)는 라즈베리 파이 입니다. </p>
-
+        
     </body>
 </html>
