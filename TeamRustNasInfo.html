@@ -9,20 +9,30 @@
     </head>
     <body>
         <h1> TeamRustNaS계기판 </h1>
+        
+        <script>
+            async function loadJSON() {
+                const response = await fetch('./TeamRustNaS.json');
+                const data = await response.json();
+                window.alphaData = data;
+                console.log("JSON loaded:", data);
+            }
+            loadJSON();
+</script>
         <py-script>
             from js import document
-            from js import fetch
+            betaData = {}
+            def show_json_data():
+                globals betaData
+                from js import alphaData
+                betaData = alphaData
+            show_json_data()
 
             def hyperlink(x):
                 link = document.getElementById('link')
                 link.href = x
-
-            async def load_and_parse_json():
-                response = await fetch('./TeamRustNaS.json')
-                json_data = await response.json()
-                return json_data
             #======Configuration======#
-            configurations = load_and_parse_json()['ServerState']
+            configurations = betaData['ServerState']
             #=========================#
             on_off_list = configurations[:10]
             ip = on_off_list[10:]
