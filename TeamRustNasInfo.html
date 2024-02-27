@@ -6,10 +6,6 @@
         <title> TeamRustNaS계기판 </title>
         <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
         <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-        <py-env>
-            - path:
-                - ./TeamRustNaSServerState.py
-        </py-env>
     </head>
     <body>
         <h1> TeamRustNaS 계기판 </h1>
@@ -21,7 +17,7 @@
                 link = document.getElementById('link')
                 link.href = x
             #======Configuration======#
-            from .TeamRustNaSServerState import csv as configurations
+            configurations = [0,0,0,0,0,0,0,0,0,0,0]
             #=========================#
             on_off_list = configurations[:10]
             ip = configurations[10:]
