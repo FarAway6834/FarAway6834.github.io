@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title> wrtn영단어 질문 만능 prompt </title>
+		<style>
+			.single-line {
+				display: inline-block;
+				white-space: nowrap;
+			}
+		</style>
+		<script>
+			function copyToClipboard() {
+				const inputField = document.getElementById('wordInput');
+				const word = inputField.value;
+				const textToCopy = `Q. 단어 \`${word}\`에 대해\n1. 단어를 쪼개서 해석하기 (어원)\n\n2. 단어 어감을 장황한 시로 ㅈㄴ 자세하고 정확히 표현하기\n\n3. 단어 뜻을 사전적으로 나열하기\n\n+        3. 1. 거기에 예문도`;
+
+				navigator.clipboard.writeText(textToCopy).then(() => {
+					alert('복사되었습니다: ' + textToCopy);
+				}).catch(err => {
+					alert('복사 실패: ' + err);
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<h1> wrtn영단어 질문 만능 prompt </h1>
+		<div class="single-line">
+			<pre>Q. 단어 ` ` ` English</pre>
+			<input id="wordInput" type="text" placeholder="단어를 입력하세요">
+			<pre> ` ` `에 대해</pre>
+		</div>
+		<br>
+		<pre>1. 단어를 쪼개서 해석하기 (어원)</pre>
+		<br>
+		<pre>2. 단어 어감을 장황한 시로 ㅈㄴ 자세하고 정확히 표현하기</pre>
+		<br>
+		<pre>3. 단어 뜻을 사전적으로 나열하기</pre>
+		<br>
+		<pre>+        3. 1. 거기에 예문도</pre>
+
+		<button onclick="copyToClipboard()">복사</button>
+	</body>
+</html>
