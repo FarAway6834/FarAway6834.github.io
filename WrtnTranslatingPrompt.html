@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title> wrtn translate prompt </title>
+		<script>
+			function copyToClipboard() {
+				const inputField = document.getElementById('wordInput');
+				const word = inputField.value;
+				const langField = document.getElementById('langInput');
+				const lang = langField.value;
+				const lang2Field = document.getElementById('lang2Input');
+				const lang2 = lang2Field.value;
+				const textToCopy = `Q. translate \n\`\`\`${lang}\n${word}\n\`\`\`\nto ${lang2}`;
+
+				navigator.clipboard.writeText(textToCopy).then(() => {
+					alert('복사되었습니다: ' + textToCopy);
+				}).catch(err => {
+					alert('복사 실패: ' + err);
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<h1> wrtn translate prompt </h1>
+		<pre>Q. translate ` ` ` </pre> <input id="langInput" type="text" placeholder="input language type of it."> <br>
+		<textarea id="wordInput" placeholder="input text to translate"></textarea>
+		<pre> ` ` `</pre>
+		<br>
+		<pre>to</pre> <input id="lang2Input" type="text" placeholder="input language to translate to."> <br>
+
+		<button onclick="copyToClipboard()">copy </button>
+	</body>
+</html>
