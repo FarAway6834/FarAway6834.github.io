@@ -13,7 +13,7 @@
 			function copyToClipboard() {
 				const inputField = document.getElementById('wordInput');
 				const word = inputField.value;
-				const textToCopy = `Q. 단어 \`${word}\`에 대해\n1. 단어를 쪼개서 해석하기 (어원)\n\n2. 단어 어감을 장황한 시로 ㅈㄴ 자세하고 정확히 표현하기\n\n3. 단어 뜻을 사전적으로 나열하기\n\n+        3. 1. 거기에 예문도`;
+				const textToCopy = `Q. 단어 \`${word}\`에 대해\n1. 단어를 쪼개서 해석하기 (어원)\n\n2. 단어 어감을 장황한 시로 ㅈㄴ 자세하고 정확히 표현하기\n\n3. 단어 뜻을 사전적으로 나열하기\n\n4. 거기에 예문도  (5개만 나열, 해석만 적는다, 어느 특정 주제에 대한 예문이 아니다<must not be 특정 주제>)`;
 
 				navigator.clipboard.writeText(textToCopy).then(() => {
 					alert('복사되었습니다: ' + textToCopy);
@@ -37,7 +37,7 @@
 		<br>
 		<pre>3. 단어 뜻을 사전적으로 나열하기</pre>
 		<br>
-		<pre>+        3. 1. 거기에 예문도</pre>
+		<pre>4. 거기에 예문도  (5개만 나열, 해석만 적는다, 어느 특정 주제에 대한 예문이 아니다<must not be 특정 주제>)</pre>
 
 		<button onclick="copyToClipboard()">복사</button>
 	</body>
