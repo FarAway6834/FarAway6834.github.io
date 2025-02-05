@@ -1,0 +1,15 @@
+#!/bin/sh
+chmod u+x ./mypipconf_man
+
+echo "WARNING : it works only wgeting if there\'s no directory `$HOME/.pip` and discard it idiotly"
+
+if [ ! -d $HOME/.pip ]
+then
+ mkdir $HOME/.pip
+ wget https://FarAway6834.github.io/mysetting/pip.conf -P $HOME/.pip
+else
+ if [ -e $HOME/.pip/pip.conf ]; then
+  rm $HOME/.pip/pip.conf
+  rmdir $HOME/.pip
+ fi
+fi
