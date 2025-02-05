@@ -1,0 +1,13 @@
+#!/bin/sh
+
+chmod u+x ./mypipoxman
+
+if [ -e "mypipox.py"]
+then
+  rm mypipox
+  rm mypipox.py
+else
+  wget mypipox.py
+  echo "#!/bin/sh\npython mypipox.py" > "mypipox"
+  chmod u+x ./mypipox
+fi
