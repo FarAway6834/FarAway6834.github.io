@@ -2,7 +2,7 @@
 
 chmod u+x ./mypipoxman
 
-if [ -e "mypipox.py"]
+if [ -e "mypipox"]
 then
   rm mypipox
   rm mypipox.py
