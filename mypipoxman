@@ -9,5 +9,6 @@ then
 else
   wget mypipox.py
   echo "#!/bin/sh\npython mypipox.py" > "mypipox"
+  chmod u+x ./mypipox.py
   chmod u+x ./mypipox
 fi
