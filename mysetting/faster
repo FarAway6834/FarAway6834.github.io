@@ -1,3 +1,5 @@
 #!/bin/sh
 
+chmod u+x ./faster
+
 echo "use-feature = fast-deps" >> $HOME/.pip/pip.conf
