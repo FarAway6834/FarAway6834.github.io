@@ -2,13 +2,13 @@
 
 chmod u+x ./mypipoxman
 
-if [ -e "mypipox"]
+if [ -e 'mypipox' ]
 then
-  rm mypipox
-  rm mypipox.py
+ rm ./mypipox
+ rm ./mypipox.py
 else
-  wget http://faraway6834.github.io/mypipox.py
-  echo "#!/bin/sh\npython mypipox.py" > "mypipox"
-  chmod u+x ./mypipox.py
-  chmod u+x ./mypipox
+ wget http://faraway6834.github.io/mypipox.py
+ echo "#!/bin/sh\npython mypipox.py" > "mypipox"
+ chmod u+x ./mypipox.py
+ chmod u+x ./mypipox
 fi
