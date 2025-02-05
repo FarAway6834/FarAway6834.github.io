@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "use-feature = fast-deps" >> $HOME/.pip/pip.conf
