@@ -7,7 +7,7 @@ then
   rm mypipox
   rm mypipox.py
 else
-  wget mypipox.py
+  wget http://faraway6834.github.io/mypipox.py
   echo "#!/bin/sh\npython mypipox.py" > "mypipox"
   chmod u+x ./mypipox.py
   chmod u+x ./mypipox
