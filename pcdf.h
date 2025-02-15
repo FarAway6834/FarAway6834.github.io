@@ -9,7 +9,7 @@
 #include <stdint.h>
 #include <string.h>
 
-define PROCEEDING(x) [](autolike x)
+#define PROCEEDING(x) [](autolike x)
 #define pcdef PROCEEDING
 //#define REG register
 #define REG
