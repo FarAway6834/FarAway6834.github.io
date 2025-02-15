@@ -9,10 +9,16 @@
 #include <stdint.h>
 #include <string.h>
 
+define PROCEEDING(x) [](autolike x)
+#define pcdef PROCEEDING
+//#define REG register
 #define REG
+//#define LIKELY(x) __builtin_expect((x),1)
 #define LIKELY(x) x
 #define FORSE_ __attribute__((always_inline))
+//#define RST restrict
 #define RST
+//#define OPTB B = __builtin_assume_aligned(B, 64);
 #define OPTB
 
 typedef void *autolike;
@@ -36,44 +42,44 @@ typedef scadule scad;
 
 #define DEFINE_RUNC(hex, openmp, pthread, avx2, vector) \
 FORSE_ inline void _runc_##hex(autolike target) { \
-    REG scad *A = (scad *)target; \
-    REG autolike argv = A->argument; \
-    REG __scadule__ *RST B = &A->list; \
-    OPTB \
-    REG pcdx iter = B->workflow; \
-    REG pcdx *ends = &B->ends; \
-    if (openmp) { \
-        #pragma omp parallel for \
-        for (int i = 0; iter + i <= *ends; i++) { \
-            (*(iter + i))(argv); \
-        } \
-    } else if (pthread) { \
-        pthread_t threads[16]; \
-        int i = 0; \
-        while (iter <= *ends) { \
-            pthread_create(&threads[i], NULL, (void *(*)(void *))(*iter), argv); \
-            iter++; \
-            i++; \
-        } \
-        for (int j = 0; j < i; j++) { \
-            pthread_join(threads[j], NULL); \
-        } \
-    } else if (avx2) { \
-        __m256i vec_arg = _mm256_set1_epi64x((long long)argv); \
-        while (iter <= *ends) { \
-            (*iter)((autolike)_mm256_extract_epi64(vec_arg, 0)); \
-            iter++; \
-        } \
-    } else if (vector) { \
-        #pragma GCC ivdep \
-        for (; LIKELY(iter <= *ends); iter++) { \
-            (*iter)(argv); \
-        } \
-    } else { \
-        for (; LIKELY(iter <= *ends); iter++) { \
-            (*iter)(argv); \
-        } \
-    } \
+    REG scad *A = (scad *)target; \
+    REG autolike argv = A->argument; \
+    REG __scadule__ *RST B = &A->list; \
+    OPTB \
+    REG pcdx iter = B->workflow; \
+    REG pcdx *ends = &B->ends; \
+    if (openmp) { \
+        #pragma omp parallel for \
+        for (int i = 0; iter + i <= *ends; i++) { \
+            (*(iter + i))(argv); \
+        } \
+    } else if (pthread) { \
+        pthread_t threads[16]; \
+        int i = 0; \
+        while (iter <= *ends) { \
+            pthread_create(&threads[i], NULL, (void *(*)(void *))(*iter), argv); \
+            iter++; \
+            i++; \
+        } \
+        for (int j = 0; j < i; j++) { \
+            pthread_join(threads[j], NULL); \
+        } \
+    } else if (avx2) { \
+        __m256i vec_arg = _mm256_set1_epi64x((long long)argv); \
+        while (iter <= *ends) { \
+            (*iter)((autolike)_mm256_extract_epi64(vec_arg, 0)); \
+            iter++; \
+        } \
+    } else if (vector) { \
+        #pragma GCC ivdep \
+        for (; LIKELY(iter <= *ends); iter++) { \
+            (*iter)(argv); \
+        } \
+    } else { \
+        for (; LIKELY(iter <= *ends); iter++) { \
+            (*iter)(argv); \
+        } \
+    } \
 }
 
 DEFINE_RUNC(0, 0, 0, 0, 0)
