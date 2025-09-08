@@ -10,3 +10,13 @@ title: 파레 로그 - 메인
 실상은 수학이랑 생각만 하는거
 
 우히히
+
+## posts
+
+{% for post in site.posts %}
+  <div>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>{{ post.date | date: "%Y as year %m as mounth %d as day" }}</p>
+    <p>{{ post.description }}</p>
+  </div>
+{% endfor %}
