@@ -1,3 +1,4 @@
+theme: jekyll-theme-minimal
 title: 파레로그
 description: Blog of Far Away 6834
 permalink: /:year/:month/:day/:title/
