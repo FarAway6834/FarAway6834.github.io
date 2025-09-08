@@ -15,7 +15,7 @@ title: 파레 로그 - 메인
 
 {% for post in site.posts %}
   <div>
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
     <p>{{ post.date | date: "%Y as year %m as mounth %d as day" }}</p>
     <p>{{ post.description }}</p>
   </div>
