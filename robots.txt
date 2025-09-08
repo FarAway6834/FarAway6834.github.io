@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://faraway6834.github.io/sitemap.xml
