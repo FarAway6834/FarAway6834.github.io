@@ -22,9 +22,9 @@ title: Knowloadgy
  + [배경지식](https://proofmood.mindconnect.cc/pm_text/ko/proofmood_manual.pdf)
 
 1. Joker 언어 & Joker Lojban 언어 교제
-2. Unbeauty & studing Unbeauty by Joker Lojban Language
-3. Angde Algebra & Joker Lojban기반 Angde Algebra 교제
-4. Study Notes of "Hillbert-Euclidan Geometry and that's Affin & VectorSpace and Cardesian Geometry and vector" & 수에 대한 선헌이 없는 독자를 위한 Joker Lojban언어 기반 교제
-5. Alkalic + Lava System + Quatro Style Theory + Quatro & Joker Lojban기반 그 교제
+2. (코딩) Unbeauty & studing Unbeauty by Joker Lojban Language
+3. (형식논리 증명숙달) Angde Algebra & Joker Lojban기반 Angde Algebra 교제
+4. (기하) Study Notes of "Hillbert-Euclidan Geometry and that's Affin & VectorSpace and Cardesian Geometry and vector" & 수에 대한 선헌이 없는 독자를 위한 Joker Lojban언어 기반 교제
+5. (대수) Alkalic + Lava System + Quatro Style Theory + Quatro & Joker Lojban기반 그 교제
 
 식이면 그나마 내 꿈이 실현 가능할꺼라고 느껴짐.
