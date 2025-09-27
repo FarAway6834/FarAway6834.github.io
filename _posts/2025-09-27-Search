@@ -1,0 +1,17 @@
+---
+layout: post
+title: Search
+---
+
+# 간편검색
+
+<div id="searcher">
+    <script>
+        const Q = document.getElementById("q");
+        function search(){
+            const input_v = Q.value;
+            window.location.href = `https://www.google.com/search?q=${input_v}`;
+        }
+    </script>
+    <input id="q" type="text"></input> <button onclick="search()"> search </button>
+</div>
