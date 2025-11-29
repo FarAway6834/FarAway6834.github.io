@@ -9,7 +9,8 @@ if [ "$1" = "--install" ] ; then
 	python -m venv "$2"
 	
 	echo "#!/bin/sh" > "${filename}"
-	echo ". \"${0} ${2}\"" >> "${filename}"
+	echo ". ${2}/bin/activate" >> "${filename}"
+	echo "alias exitvenv=\"deactivate\"" >> "${filename}"
 	chmod u+x "${filename}"
 	
 elif [ "$1" = "--uninstall" ] ; then
@@ -18,6 +19,5 @@ elif [ "$1" = "--uninstall" ] ; then
 	rm -rf "${2}"
 	rm -f "${filename}"
 else
-	. "${1}/bin/activate"
-	alias exitvenv="deactivate"
+	echo "do --install or --uninstall"
 fi
