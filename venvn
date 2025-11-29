@@ -15,9 +15,9 @@ if [ "$1" = "--install" ] ; then
 elif [ "$1" = "--uninstall" ] ; then
 	filename="run${2}"
 	
-	rm -r "${2}"
-	rm "${filename}"
+	rm -rf "${2}"
+	rm -f "${filename}"
 else
-	source $1/bin/activate
+	source "${1}/bin/activate"
 	alias exitvenv="deactivate"
 fi
