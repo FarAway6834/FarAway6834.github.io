@@ -4,20 +4,27 @@
 chmod u+x "./${0}"
 
 if [ "$1" = "--install" ] ; then
-	filename="run${2}"
+	filename1="load${2}"
+	filename2="run${2}"
 	
 	python -m venv "$2"
 	
-	echo "#!/bin/sh" > "${filename}"
-	echo ". ${2}/bin/activate" >> "${filename}"
-	echo "alias exitvenv=\"deactivate\"" >> "${filename}"
-	chmod u+x "${filename}"
+	echo "#!/bin/sh" > "${filename1}"
+	echo ". ${2}/bin/activate" >> "${filename1}"
+	echo "alias exitvenv=\"deactivate\"" >> "${filename1}"
+	chmod u+x "${filename1}"
+
+	echo "#!/bin/sh" > "${filename2}"
+	echo "sh -c \'. ./${filename1}; exec sh\'" >> "${filename2}
+	chmod u+x "${filename2}"
 	
 elif [ "$1" = "--uninstall" ] ; then
-	filename="run${2}"
+	filename1="load${2}"
+	filename2="run${2}"
 	
 	rm -rf "${2}"
-	rm -f "${filename}"
+	rm -f "${filename1}"
+	rm -f "${filename2}"
 else
 	echo "do --install or --uninstall"
 fi
