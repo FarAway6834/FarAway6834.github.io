@@ -1,6 +1,8 @@
 #!/bin/sh
 #https://faraway6834.github.io/venvn
 
+chmod u+x "./${0}"
+
 if [ "$1" = "--install" ] ; then
 	filename="run${2}"
 	
@@ -8,6 +10,7 @@ if [ "$1" = "--install" ] ; then
 	
 	echo "#!/bin/sh" > "${filename}"
 	echo "source ${0} ${2}" >> "${filename}"
+	chmod u+x "${filename}"
 	
 elif [ "$1" = "--uninstall" ] ; then
 	filename="run${2}"
