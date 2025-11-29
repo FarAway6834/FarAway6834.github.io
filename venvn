@@ -9,7 +9,7 @@ if [ "$1" = "--install" ] ; then
 	python -m venv "$2"
 	
 	echo "#!/bin/sh" > "${filename}"
-	echo ". ${0} ${2}" >> "${filename}"
+	echo ". \"${0} ${2}\"" >> "${filename}"
 	chmod u+x "${filename}"
 	
 elif [ "$1" = "--uninstall" ] ; then
