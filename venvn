@@ -1,6 +1,5 @@
 #!/bin/sh
-
-/** https://faraway6834.github.io/venvn */
+#https://faraway6834.github.io/venvn
 
 if [ "$1" = "--install" ] ; then
 	filename="run${2}"
