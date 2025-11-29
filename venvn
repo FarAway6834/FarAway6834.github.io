@@ -9,7 +9,7 @@ if [ "$1" = "--install" ] ; then
 	python -m venv "$2"
 	
 	echo "#!/bin/sh" > "${filename}"
-	echo "source ${0} ${2}" >> "${filename}"
+	echo ". ${0} ${2}" >> "${filename}"
 	chmod u+x "${filename}"
 	
 elif [ "$1" = "--uninstall" ] ; then
@@ -18,6 +18,6 @@ elif [ "$1" = "--uninstall" ] ; then
 	rm -rf "${2}"
 	rm -f "${filename}"
 else
-	source "${1}/bin/activate"
+	. "${1}/bin/activate"
 	alias exitvenv="deactivate"
 fi
