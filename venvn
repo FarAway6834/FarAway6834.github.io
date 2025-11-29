@@ -15,7 +15,7 @@ if [ "$1" = "--install" ] ; then
 	chmod u+x "${filename1}"
 
 	echo "#!/bin/sh" > "${filename2}"
-	echo "sh -c \'. ./${filename1}; exec sh\'" >> "${filename2}"
+	echo "sh -c '. ./${filename1}; exec sh'" >> "${filename2}"
 	chmod u+x "${filename2}"
 	
 elif [ "$1" = "--uninstall" ] ; then
