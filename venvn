@@ -1,0 +1,21 @@
+#!/bin/sh
+
+/** https://faraway6834.github.io/venvn */
+
+if [ "$1" = "--install" ] ; then
+	filename="run${2}"
+	
+	python -m venv "$2"
+	
+	echo "#!/bin/sh" > "${filename}"
+	echo "source ${0} ${2}" >> "${filename}"
+	
+elif [ "$1" = "--uninstall" ] ; then
+	filename="run${2}"
+	
+	rm -r "${2}"
+	rm "{$filename}"
+else
+	source $1/bin/activate
+	alias exitvenv="deactivate"
+fi
