@@ -448,6 +448,157 @@ T ET x = <T, x, f>인 모노이드로 정의된다고 해두겠다.
 
 이상으로, EndofunctorTypesystem의 정의를 마친다.
 
+## Application (응용가능성과, 응용 사례)
+
+이를 응용하면, 다음 표기법이 가능하다. 다만 다음 표기법은 Endofunctor Type이 아닌 독자적인 개인용 표기법이다. (그렇다. 순전히 내 편의를 위해 기록한거다. 별개의 것이기에 같이 소개되면 안된다. (그리고 홍보 의도도 없다) 그러다 파일을 만들기 귀찮았기에 여기에다 적었다.)
+
+### graph type notation
+1. (:f) ≜ graph f
+2. (P ::: f) : (P :: (:f))
+각각 단항연산자 `(:•)`및 이항관계 `:::`이다. 모델론적 언어인대도, notation이라 부르는 이유는, 이미 술어논리와 모델론에서 사용되고 있는 기호인 `:`을 남용했기에, 표기법으로 정의해야 했다.
+
+### truth-functional-set-operator)
+
+진리함수는 함수이지 술어(집합)이 아니다.
+
+그러나, 치역이 진리치기만 하면 상관없는 사람들을 위해서 다음 단항연산을 제공한다.
+
+모델 TFSM(D) ≜ <D, TFSO>에 대하여,
+
+TFSO f ≜ {x | f(x)}
+
+dom TFSO = {f | dom f ⊆ D, codom f = 𝔹}
+codom TFSO ⊆ D
+
+즉, 전체집합 D에 따라서, TFSO는 달라진다. 다만, 주의할점은, D에 기본적으로 우주 (Universe)를 대입할 생각으로 설계했기에ㅜ 범주론의 공리를 받아들이지 않는 선에서 사용하면, TFSO의 사용은 다소 자유롭지 않다.
+
+### Endofunctor-TypeSet Notation
+
+엔도펑터 타입 시스템을 TFSO를 통하여 집합으로 나타내는 Notation이다.
+
+다음 이항관계 ETSN(::), ETSN(:::)는 다음과 같이 정의되어, 이 함자 표기를 통한 타입 시스템에 쓰이기에, 체계에 쓰인다
+1. (x ETSN(::) y) : (x :: y)
+2. (x ETSN(:::) y) : (x ::: y)
+3. (:: x) ≜ TFSO((ETSN(::) x)
+4. (::: x) ≜ TFSO((ETSN(:::) x)
+
+이때, `ETSN(::)`와 `ETSN(:::)`는 Lexing되는 "단일 문자"로, (1, 2)가 모댈론적 정의가 되기 위해서, 추가적으로 등록된 길이-1 문자다.
+
+3, 4의 경우, 표기법(Notation)으로, 형식문법을 통해 해석되는것으로
+
+엄밀히는,
+
+3. "(:: " `concat` x `concat` ")" =>¹ "TFSO((ETSN(::) " `concat` x `concat` ")'
+4. "(::: " `concat` x `concat` ")" =>¹ "TFSO((ETSN(:::) " `concat` x `concat` ")'
+
+에 해당한다.
+
+### lambda - like function notation
+1. (λx : X. y : Y) ≜ (X, Y, (:(λx : X. y : Y)))
+2. (:(λx : X. y : Y)) ≜ {(x, y) | x ∈ X, y ∈ Y}
+이도 역시 집합론이라는 형식언어로 표현 가능한데도 표기법인 이유는, graph type notation로 정의되었고, x랑 y에 아무런 심볼이나 와도 무방하기 때문이다.
+
+그런 이유로 더 형식적으로 표현하자면
+
+1. "(λ" `concat` x `concat` " : " `concat` X `concat` ". " `concat` y ": " `concat` Y `concat` ")" =>¹ "(" `concat` X `concat` ", " `concat` Y `concat` ", (:(λ" `concat` x `concat` " : " `concat` X `concat` ". " `concat` y `concat` " : " `concat` Y `concat` ")))"
+2. "(:(λ" `concat` x `concat` " : " `concat` X ". " `concat` y `concat` " : " `concat` Y `concat` "))" =>¹ "{(" `concat` x `concat` ", " `concat` y `concat` ") | " `concat` x `concat` " ∈ " `concat` X `concat` ", " `concat` y `concat` " ∈ " `concat` Y `concat` "}"
+라는 형식문법이다. 오우 복잡해서 빈칸 기호를 다 쓰고싶은 기분이다.
+
+사실 lambda - like function notation는 5가지 항목이다.
+1. (λx : X. y : Y) ≜ (X, Y, (:(λx : X. y : Y)))
+2. (:(λx : X. y : Y)) ≜ {(x, y) | x ∈ X, y ∈ Y}
+3. (λx :: X. y :: Y) ≜ (λx : (:: X). y : (:: Y))
+4. (λx ::: X. y ::: Y) ≜ (λx : (: X). y : (: Y))
+5. (λx :::: X. y :::: Y) ≜ (λx : (::: X). y : (::: Y))
+더이상의 자세한 설명은 생략한다.
+
+### escaping notation
+
+프로그래밍 언어에서 쓰이는 이스케이핑 문자 `\\`, `\'`, `\"`의 사용을 허가한다.
+
+### forse the concat operator
+
+함수 concat이 덧셈기호 `+` 마냥, 항상 Abstract Collection의 도메인에 맞게, 어떤 도메인이던간게 `concat`을 기호로써, 연산자로 예약하고, 그걸 모델에서 배정하도록 하는 방식
+
+### t3n (the 3 notation)
+
+escaping notation, forse the concat operator, 그리고 컴파일러에 대한 책인 Dragon Book에서 사용한 `=>ⁿ`, `=>*`, `=>⁺`라는 notation 이렇게 새가지를 묶어서 부르는 명칭.
+
+### High Orderd Functional Type
+
+HOFT는 LLFN(lambda - like function notation)에서 쓸 목적으로 개발된 집합에서 집합으로 가는 연산이다.
+
+멱집합 연산 P(A) = 2ᴬ과 함수공간 Func(X, Y) = {f | dom f = X, codom f = Y}에 대해,
+
+Func의 상 Func[P(X) × P(Y)]는, X의 부분집합을 정의역으러, Y의 부분집합을을 공역으로 가지는 함수공간의 모임인 상이므로, HOFT를 다음과 같은 무한집합으로 정의 가능하다.
+
+HOFT(D) ≜ P(D) ∪ P[Func[HOFT(D) × HOFT(D)]] ∪ {{ε}}
+
+참고로 이 경우, 그저 HOFT(𝔹)를 쓰는것 만으로도, 
+
+∅, {F}, {T}, 𝔹, {ε} ∈ HOFT(𝔹)이고
+∀X, Y ∈ HOFT(𝔹), P(Func(X, Y)) ⊆ HOFT(𝔹)
+이다.
+
+이 고차함수놈은, 함수가 아닌 놈부터, 점점 함수의 함수, 함수의 함수의 함수, ... 쭉쭉쭉 올라가서, 결국은 무한이 올라간다.
+
+다만, 이를 엄밀히 정의하는건 다른 방법을 쓴다.
+
+바로, 아래와 같은 형식으로 귀납적으로 정의한다.
+
+definition)
+1. {ε} ∈ preHOFT(D)₀
+2. P(D) ⊆ preHOFT(D)₀
+3. preHOFT(D)₍ₙ₊₁₎ = P[Func[preHOFT(D)ₙ²]] ∪ preHOFT(D)ₙ
+4. HOFT(D) = lim_{n ⟶ ∞} preHOFT(D)ₙ
+
+Tip : P[Func[S²]] = P[{Z | X, Y ∈ S, Z = Func(X, Y)}] = {x | x ⊆ {Z | X, Y ∈ S, Z = Func(X, Y)}} 이다. 즉, ∀X, Y ∈ S, Func(X, Y) ∈ Func[S²]인 Func[S²]에 대해, Func[S²]의 Power Set. 어짜피 S가 가능한 모든 타입이면, 해당 타입들 가지도 만드는 함수는, 정의역이 저따구일수밖에.
+
+암튼 이런식으로 정의된다.
+
+#### High Order Functional Model : HOFT의 LLFN(lambda - like function notation)에서의 응용
+
+멱집합 연산 P(A) = 2ᴬ에 대해, 혼동의 오류가 있으니, Power = P라 하자.
+
+그러면 알수있는 사실은, 모델 M = <D, t> (구조채가 튜플이므로, 튜플의 제귀적 정의에 따라, t는 D에 대한 연산이 들어있는 튜플일것이다.) 에 대해, M에 상수기호를 따로 정의하지 않고 함수기호만 있을때, LLFN(lambda - like function notation)와 해당 모델을 합한 방식으로 조합되는 조합논리 • 혹은 모델을 High Order Functional Model이라고 정의하고,
+
+HOFM(D, t) = (HOFT(D), power, Func, dom, codom, (::•), <D, t>)라 정의하겠음. (그렇다. 구조체는 아닌데 어쨌든 정의가 된다. 일단, 함수의 경우, 대수구조 <D, t>위의 함수고, 타입의 경우 power로 지네릭 대상 타입을 구할수 있고, typename의 경우 HOFT(D)로 구할수 있고, 함수 타입의 경우 Func를, 마지막으로 람다의 경우, HOFT안에 있는 Func인 타입이 된다. 그리고 심지어 집합론적이다.)
+
+그러면, LLFN(lambda - like function notation)은 완벽하게 HOFM위에 정의된 상수가 되기에, LLFN은 모델론적으로 설명 가능하게 된다. (물론, 가능한 타입을 상당히 제한했기에 가능했겠지만)
+
+Endotypize := λS : Power(HOFT(D)). (λx : S. (λt : {ε}. x : S) : Func({ε}, S)) : Func(S, Func({ε}, S))
+
+인 Endotypize를 보라. 얼마나 깔끔하게 코딩되었는가?
+
+지네릭 기능을 쓰자면
+
+HOFM위의 S에서, Endotypize<S>로 가는 함수이다.
+
+주의할점이 있다면, 지금까지는 타입 기능이 아예 없다. 그러니, 타입이 없는 그냥 평범한 함수일 뿐이다.
+
+그러나, Endotypize<S>(x)를 써주면, 타입이 생긴다. 야호!
+
+그러므로 다음 Disendotyize
+
+Disendotyize := λT : HOFT(D). (λx :: T. x() : T) : Func((::T), T)
+
+에 대해서, 다음과 같은 정신나간 짓거리가 가능하다.
+
+typecast := λT : HOFT(D). (λG : HOFT(D). (λx :: T. Endotypize<G>(Disendotyize<T>(x)) :: G) : Func((::T), (::G))) : Func(HOFT(D), Func((::T), (::G)))
+
+Notation) T `typecast` G을 문법적으로 강제로 typecast<T><G>로 정의.
+
+이런 함수 T `typecast` G에 대하여 타입 케스팅이 된다...
+
+이를 통해서, 프로그래밍 가능한 대수구조가 생긴다. 야호!
+
+이는 C++ template같이 명시적인 타입에 Haskell같은 수학적 철저함도 갗추고 있기 때문에, 함수를 작성하기 매우 용이하게 만들어준다.
+
+이가 의미하는 바는 간단하다. 모델 M위에서 제한적으로 Endofunctor Type System을 사용하는 대수구조를 통하면, 간편하게 Endofunctor Type System을 사용할수 있을것이다.
+
+N.B. 그러한 편의 용도로 정의한거다. 명확한 형식적 정의와 높은 표현력을 가지는 형식 언어이므로, 앞으로 자주 사용될것이다.
+N.B. 고1 때까지만 해도 전산 지망이었다가, 고2때 수학도로 전향한 놈이었어서, 함수를 정의할때 가끔씩 프로그래밍하듯이 적을 때가 있다. 근데 이건 프로그래밍 언어를 의도하고 만든게 아니다. (그러나 나는 프로그래밍 언어를 만들 생각이었을 경우, 튜링 완전하면, 죄다 "프로그래밍 언어"라고 주저 없이 명시한다.) 그렇다. 당연하게도 형식언어로써, 함수를 편리하게 표현하고 싶었을 뿐이다.
+
 ## 여담 (Endofunctor Type System 포스팅본 여담)
 
 젠장 이렇게 포스팅 안하면, 인용하기에 문서가 너무 커서 포스팅했다.
