@@ -263,7 +263,7 @@ NSDecoderTableize(L, x)₀ ≜ first(x)
 NSDecoderTableize(L, x)ₙ ≜ NSDecoderTableize(L - 1, last(x))₍ₙ₋₁₎
 
 restrictedArr ≜ {a | dom a = [1 ⤳ card a]}
-ArrLastMask ≜ {{n + 1}ₜ₍ₙ₎ (단. t = [1 ⤳ k)) : restrictedArr}ₜ₍ₙ₎ (단. t ≜ [2 ⤳ ∞))
+ArrLastMask ≜ { {n + 1}ₜ₍ₙ₎ (단. t = [1 ⤳ k)) : restrictedArr}ₜ₍ₙ₎ (단. t ≜ [2 ⤳ ∞))
 
 tuplize ≜  Surj a : tuplize(a)
 tuplize|ₓ ≜ (ϝ a : ε : codom tuplize (단. x = {a | dom a = (0 ⤳ 0))) (tip : (0 ⤳ 0) = [1 ⤳ 0) = ∅)
