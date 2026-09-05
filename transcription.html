@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title> 보카로 가사 필사하려고 만든거 </title>
+  </head>
+  <body>
+    <textarea></textarea>
+    <br>
+    <iframe src="https://namu.wiki/w/%EC%84%B1%EC%9D%B8%EA%B5%B0%EC%9E%90%EC%9D%B4%EA%B3%A0%20%EC%8B%B6%EC%96%B4" id="LyriceURLIframe"></iframe>
+    <details open>
+      <summary>link edit</summary>
+      <div>
+        <input type="text" placeholder="https://namu.wiki/w/%EC%84%B1%EC%9D%B8%EA%B5%B0%EC%9E%90%EC%9D%B4%EA%B3%A0%20%EC%8B%B6%EC%96%B4" src ="https://namu.wiki/w/%EC%84%B1%EC%9D%B8%EA%B5%B0%EC%9E%90%EC%9D%B4%EA%B3%A0%20%EC%8B%B6%EC%96%B4" id="LyriceURL">
+        <button onclick="updateLyriceURL()"> connect </button>
+      </div>
+    </details>
+    <script>
+    const LyriceURLIframe = document.querySelector("#LyriceURLIframe");
+    const LyriceURL = document.querySelector("#LyriceURL");
+    
+    function updateLyriceURL() {
+      const lyrice_url_value = LyriceURL.value;
+      LyriceURL.setAttribute("value", lyrice_url_value);
+     LyriceURL.setAttribute("placeholder", lyrice_url_value);
+      LyriceURLIframe.setAttribute("src", lyrice_url_value);
+    }
+    </script>
+  </body>
+</html>
