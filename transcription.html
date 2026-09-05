@@ -3,11 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title> 보카로 가사 필사하려고 만든거 </title>
+    <style>
+      .resizable {
+        width: 500px;
+        height: 400px;
+        min-width: 200px;
+        min-height: 150px;
+        max-width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+        resize: both;         
+        overflow: auto;       
+      }
+
+      .resizable iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
   </head>
   <body>
     <textarea></textarea>
     <br>
-    <iframe src="https://vocaro.wikidot.com/wanna-be-saint" id="LyriceURLIframe"></iframe>
+    <div class=".resizable">
+      <iframe src="https://vocaro.wikidot.com/wanna-be-saint" id="LyriceURLIframe"></iframe>
+    </div>
     <details open>
       <summary>link edit</summary>
       <div>
