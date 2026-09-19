@@ -1,3 +1,6 @@
+업로드는 초기 제작으로부터 6개월 후다.
+
+
 # lan'molan' a.k.a. lingua insaina (madlang)
 
 형식언어에 'molan'이 있는, ENTP작성자가,
