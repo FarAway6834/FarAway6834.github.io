@@ -33,11 +33,11 @@
             background-color : #ffffff;
         } */
         
-        #check-markup:checked {
+        div:has(#check-markup:checked) {
             background-color : red;
         }
         
-        #check-markup:not(:checked) {
+        div:has(#check-markup:not(:checked)) {
             background-color : blue;
         }
         
