@@ -10,30 +10,43 @@
       <anime-framework></anime-framework>
       <style>
         #check-markup:checked ~ #check-process {
-          animation : makeCheck 0.1s
+          animation : makeCheck 0.1s;
         }
         
         #check-markup:not(:checked) ~ #check-process {
-          animation : makeUncheck 0.1s
+          animation : makeUncheck 0.1s;
         }
         
         /* #check-markup:has(~ #check-process:checked) {
-           background-color : #f0f0f0
+           background-color : #f0f0f0;
         }
         
         #check-markup:has(~ #check-process:not(:checked)) {
-            background-color : #ffffff
+            background-color : #ffffff;
         }
         
         h1:has(~ div:has(#check-process:checked)) {
-           background-color : #f0f0f0
+           background-color : #f0f0f0;
         }
         
         h1:has(~ div:has(#check-process:not(:checked))) {
-            background-color : #ffffff
+            background-color : #ffffff;
         } */
         
         #check-markup:checked {
+            background-color : #f0f0f0;
+        }
+        
+        #check-markup:not(:checked) {
+            background-color : #ffffff;
+        }
+        
+        h1.has(~ div:has(#check-markup:checked))) {
+            background-color : #f0f0f0;
+        }
+        
+        h1.has(~ div:has(#check-markup:not(:checked))) {
+            background-color : #ffffff;
         }
       </style>
       <input type="checkbox" id="check-markup" name="checkbox">
