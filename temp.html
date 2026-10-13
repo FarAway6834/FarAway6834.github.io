@@ -16,11 +16,20 @@
         #check-markup:not(:checked) ~ #check-process {
           animation : makeUncheck 0.1s
         }
+        
         #check-markup:has(~ #check-process:chekced) {
            background-color : #f0f0f0
         }
         
         #check-markup:has(~ #check-process:not(:checked)) {
+            background-color : #ffffff
+        }
+        
+        h1:has(~ div:has(#check-process:chekced)) {
+           background-color : #f0f0f0
+        }
+        
+        h1:has(~ div:has(#check-process:not(:checked))) {
             background-color : #ffffff
         }
       </style>
