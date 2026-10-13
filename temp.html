@@ -34,19 +34,19 @@
         } */
         
         #check-markup:checked {
-            background-color : #f0f0f0;
+            background-color : red;
         }
         
         #check-markup:not(:checked) {
-            background-color : #ffffff;
+            background-color : blue;
         }
         
         h1.has(~ div:has(#check-markup:checked))) {
-            background-color : #f0f0f0;
+            background-color : red;
         }
         
         h1.has(~ div:has(#check-markup:not(:checked))) {
-            background-color : #ffffff;
+            background-color : blue;
         }
       </style>
       <input type="checkbox" id="check-markup" name="checkbox">
