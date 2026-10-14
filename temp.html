@@ -7,9 +7,9 @@
   <body>
     <h1> debbugging room </h1>
     <div>
-      <!--<anime-framework></anime-framework>-->
+      <anime-framework></anime-framework>
       <style>
-        /* #check-markup:checked ~ #check-process {
+        #check-markup:checked ~ #check-process {
           animation : makeCheck 0.1s;
         }
         
@@ -17,32 +17,16 @@
           animation : makeUncheck 0.1s;
         }
         
-        #check-markup:has(~ #check-process:checked) {
-           background-color : #f0f0f0;
-        }
-        
-        #check-markup:has(~ #check-process:not(:checked)) {
-            background-color : #ffffff;
-        }
-        
-        h1:has(~ div:has(#check-process:checked)) {
-           background-color : #f0f0f0;
-        }
-        
-        h1:has(~ div:has(#check-process:not(:checked))) {
-            background-color : #ffffff;
-        } */
-        
-        body:has(:where(#check-markup)) {
+        body:has(:where(#check-process)) {
             background-color: white;
         }
 
-        body:has(#check-markup:checked) {
+        body:has(#check-process[checked]) {
             background-color: gray;
         }
       </style>
       <input type="checkbox" id="check-markup" name="checkbox">
-      <!--<anime-input id="check-process"></anime-input>-->
+      <anime-input id="check-process"></anime-input>
     </div>
   </body>
 </html>
