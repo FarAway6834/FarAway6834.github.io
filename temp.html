@@ -33,20 +33,12 @@
             background-color : #ffffff;
         } */
         
-        div:has(#check-markup:checked) {
-            background-color : red;
+        body:has(:where(:has(#check-markup))) {
+            background-color: blue;
         }
-        
-        div:has(#check-markup) {
-            background-color : blue;
-        }
-        
-        h1:has(~ div:has(#check-markup:checked)) {
-            background-color : red;
-        }
-        
-        h1:has(~ div:has(#check-markup)) {
-            background-color : blue;
+
+        body:has(div:has(#check-markup:checked)) {
+            background-color: red;
         }
       </style>
       <input type="checkbox" id="check-markup" name="checkbox">
