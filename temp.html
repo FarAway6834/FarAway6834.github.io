@@ -37,7 +37,7 @@
             background-color : red;
         }
         
-        div:has(#check-markup:not(:checked)) {
+        div:has(#check-markup) {
             background-color : blue;
         }
         
@@ -45,7 +45,7 @@
             background-color : red;
         }
         
-        h1:has(~ div:has(#check-markup:not(:checked))) {
+        h1:has(~ div:has(#check-markup)) {
             background-color : blue;
         }
       </style>
