@@ -33,11 +33,11 @@
             background-color : #ffffff;
         } */
         
-        body:has(:where(:has(#check-markup))) {
+        body:has(:where(#check-markup)) {
             background-color: blue;
         }
 
-        body:has(div:has(#check-markup:checked)) {
+        body:has(#check-markup:checked) {
             background-color: red;
         }
       </style>
