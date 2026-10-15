@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> anime framework and anime box </title>
+    <script src="https://xunr3.github.io/af.js" fetchpriority="high"></script>
+    <script src="https://xunr3.github.io//ab.js" fetchpriority="high"></script>
+    <link rel="stylesheet" href="https://xunr3.github.io/ab.css">
+  </head>
+  <body>  
+    <h1> anime framework and anime box </h1>
+    <anime-framework></anime-framework>
+    <style>
+      
+      body:has(#in:checked) #out {
+        animation: makeCheck 0.1ms;
+      }
+      
+      body:has(#in:not(:checked)) #out {
+        animation: makeUncheck 0.1ms;
+      }
+    </style>
+    <anime-box width="20px" height="20px" anime-box-bordering anime-coloring><input type="checkbox" id="inp"></anime-box> <br>
+    <anime-box width="20px" height="20px" anime-input-targeting anime-box-bordering anime-coloring><anime-input id="out"></anime-input></anime-box>
+  </body>
+</html>
