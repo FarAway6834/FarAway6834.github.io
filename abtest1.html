@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> debugging room </title>
+    <script src="https://xunr3.github.io/af.js" fetchpriority="high"></script>
+    <script src="https://xunr3.github.io//ab.js" fetchpriority="high"></script>
+    <link rel="stylesheet" href="https://xunr3.github.io/ab.css">
+  </head>
+  <body>  
+    <h1> debugging room </h1>
+    <anime-framework></anime-framework>
+    <style>
+      
+      body:has(#inp0:checked) #outp0 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      body:has(#inp0:not(:checked)) #outp0 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      /* #inp1:checked ~ #outp1 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp1 ~ #outp1 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp2:checked ~ #outp2 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp2 ~ #outp2 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp3:checked ~ #outp3 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp3 ~ #outp3 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp4:checked ~ #outp4 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp4 ~ #outp4 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp5:checked ~ #outp5 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp5 ~ #outp5 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp6:checked ~ #outp6 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp6 ~ #outp6 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp7:checked ~ #outp7 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp7 ~ #outp7 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp8:checked ~ #outp8 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp8 ~ #outp8 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp9:checked ~ #outp9 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp9 ~ #outp9 {
+        animation: makeUncheck 0.1ms;
+      }
+      
+      #inp10:checked ~ #outp10 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp10 ~ #outp10 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp11:checked ~ #outp11 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp11 ~ #outp11 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp12:checked ~ #outp12 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp12 ~ #outp12 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp13:checked ~ #outp13 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp13 ~ #outp13 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp14:checked ~ #outp14 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp14 ~ #outp14 {
+        animation: makeUncheck 0.1ms;
+      }
+
+      #inp15:checked ~ #outp15 {
+        animation: makeCheck 0.1ms;
+      }
+      
+      #inp15 ~ #outp15 {
+        animation: makeUncheck 0.1ms;
+      } */
+    </style>
+    <anime-box><input type="checkbox" id="inp0"></anime-box>
+    <!--<anime-box width="20px"><input type="checkbox" id="inp1"></anime-box> <br>
+    <anime-box height="20px"><input type="checkbox" id="inp2"></anime-box> <br>
+    <anime-box width="20px" height="20px"><input type="checkbox" id="inp3"></anime-box> <br>-->
+    <anime-box anime-input-targeting><anime-input id="outp0"></anime-input></anime-box> <br>
+    <!--<anime-box width="20px" anime-input-targeting><anime-input id="outp1"></anime-input></anime-box> <br>
+    <anime-box height="20px" anime-input-targeting><anime-input id="outp2"></anime-input></anime-box> <br>
+    <anime-box width="20px" height="20px" anime-input-targeting><anime-input id="outp3"></anime-input></anime-box> <br>
+    <anime-box anime-coloring><input type="checkbox" id="inp4"></anime-box> <br>
+    <anime-box width="20px" anime-coloring><input type="checkbox" id="inp5"></anime-box> <br>
+    <anime-box height="20px" anime-coloring><input type="checkbox" id="inp6"></anime-box> <br>
+    <anime-box width="20px" height="20px" anime-coloring><input type="checkbox" id="inp7"></anime-box> <br>
+    <anime-box anime-input-targeting anime-coloring><anime-input id="outp4"></anime-input></anime-box> <br>
+    <anime-box width="20px" anime-input-targeting anime-coloring><anime-input id="outp5"></anime-input></anime-box> <br>
+    <anime-box height="20px" anime-input-targeting anime-coloring><anime-input id="outp6"></anime-input></anime-box> <br>
+    <anime-box width="20px" height="20px" anime-input-targeting anime-coloring><anime-input id="outp7"></anime-input></anime-box> <br>
+    <anime-box anime-box-bordering><input type="checkbox" id="inp8"></anime-box> <br>
+    <anime-box width="20px" anime-box-bordering><input type="checkbox" id="inp9"></anime-box> <br>
+    <anime-box height="20px" anime-box-bordering><input type="checkbox" id="inp10"></anime-box> <br>
+    <anime-box width="20px" height="20px" anime-box-bordering><input type="checkbox" id="inp11"></anime-box> <br>
+    <anime-box anime-input-targeting anime-box-bordering><anime-input id="outp8"></anime-input></anime-box> <br>
+    <anime-box width="20px" anime-input-targeting anime-box-bordering><anime-input id="outp9"></anime-input></anime-box> <br>
+    <anime-box height="20px" anime-input-targeting anime-box-bordering><anime-input id="outp10"></anime-input></anime-box> <br>
+    <anime-box width="20px" height="20px" anime-input-targeting anime-box-bordering><anime-input id="outp11"></anime-input></anime-box> <br>
+    <anime-box anime-coloring anime-box-bordering><input type="checkbox" id="inp12"></anime-box> <br>
+    <anime-box width="20px" anime-coloring anime-box-bordering><input type="checkbox" id="inp13"></anime-box> <br>
+    <anime-box height="20px" anime-coloring anime-box-bordering><input type="checkbox" id="inp14"></anime-box> <br>
+    <anime-box width="20px" height="20px" anime-coloring anime-box-bordering><input type="checkbox" id="inp15"></anime-box> <br>
+    <anime-box anime-input-targeting anime-coloring anime-box-bordering><anime-input id="outp12"></anime-input></anime-box> <br>
+    <anime-box width="20px" anime-input-targeting anime-coloring anime-box-bordering><anime-input id="outp13"></anime-input></anime-box> <br>
+    <anime-box height="20px" anime-input-targeting anime-coloring anime-box-bordering><anime-input id="outp14"></anime-input></anime-box> <br>
+    <anime-box width="20px" height="20px" anime-input-targeting anime-coloring anime-box-bordering><anime-input id="outp15"></anime-input></anime-box> <br> -->
+
+    <!--아니 ㅅㅂ input태그의checked자체를 브라우저가 못파악하고있는데-->
+    <!--이제야 작동하네 ㅅㅂ-->
+  </body>
+</html>
