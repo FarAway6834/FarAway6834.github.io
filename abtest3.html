@@ -13,19 +13,19 @@
       @import url("https://xunr3.github.io/bugc.css");
 
       .in-out:has(.in-out-in:checked) .in-out-out {
-        animation: --anime-on;
+        animation: var(--anime-on);
       }
       
       .in-out:has(.in-out-in:not(:checked)) .in-out-out {
-        animation: --anime-off;
+        animation: var(--anime-off);
       }
 
       .not-gate:has(.not-gate-in[checked]) .not-gate-out {
-        animation: --anime-off;
+        animation: var(--anime-off);
       }
 
       .not-gate:has(.not-gate-in:not([checked])) .not-gate-out {
-        animation: --anime-on;
+        animation: var(--anime-on);
       }
     </style>
     <table class="in-out not-gate">
