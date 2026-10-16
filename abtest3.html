@@ -8,12 +8,14 @@
     <h1> anime framework and anime box </h1>
     <bugc-init></bugc-init>
     <style>
-      .not-gate:has(.not-gate-in[checked]) .not-gate-out {
-        animation: var(--anime-off);
-      }
-
-      .not-gate:has(.not-gate-in:not([checked])) .not-gate-out {
-        animation: var(--anime-on);
+      @layer usingBugc {
+        .not-gate:has(.not-gate-in[checked]) .not-gate-out {
+          animation: var(--anime-off);
+        }
+        
+        .not-gate:has(.not-gate-in:not([checked])) .not-gate-out {
+          animation: var(--anime-on);
+        }
       }
     </style>
     <table class="in-out not-gate">
