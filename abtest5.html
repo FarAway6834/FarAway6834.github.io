@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> debugging room </title>
+        <script src="https://xunr3.github.io/bugc.js" fetchpriority="high"></script>
+    </head>
+    <body>
+        <h1> debugging room </h1>
+        <bugc-init></bugc-init>
+        <link rel="stylesheet" href="https://xunr3.github.io/bugc_underclock_style.css" fetchpriority="high">
+        
+        <div class="wps-p0 bus">
+      
+            <div id="ui">
+      
+                <anime-box anime-box-bordering anime-coloring>
+                    <div class="in-out">
+                        <input type="checkbox" class="in-out-i">
+                        <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                    </div>
+                </anime-box>
+      
+                <anime-box anime-box-bordering anime-coloring>
+                    <div class="in-out">
+                        <input type="checkbox" class="in-out-i">
+                        <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                    </div>
+                </anime-box>
+                
+                <anime-box anime-box-bordering anime-input-targeting anime-coloring>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </anime-box>
+            </div>
+
+            <div class="wps=w1">
+                <div class="wps-w0">
+
+                    <div class="nand-gate">
+                        <anime-input class="nand-gate-i0 wps-p0-o0"></anime-input>
+                        <anime-input class="nand-gate-i1 wps-p0-o0"></anime-input>
+                        <anime-input class="nand-gate-o wps-w0-i0"></anime-input>
+                    </div>
+
+                    <div class="nand-gate">
+                        <anime-input class="nand-gate-i0 wps-w1-o1"></anime-input>
+                        <anime-input class="nand-gate-i1 wps-w1-o1"></anime-input>
+                        <anime-input class="nand-gate-o wps-w0-i1"></anime-input>
+                    </div>
+
+                    <div class="nand-gate">
+                        <anime-input class="nand-gate-i0 wps-w0-o0"></anime-input>
+                        <anime-input class="nand-gate-i1 wps-w0-o1"></anime-input>
+                        <anime-input class="nand-gate-o wps-w0-i2"></anime-input>
+                    </div>
+
+                    <div class="nand-gate">
+                        <anime-input class="nand-gate-i0 wps-w0-o2"></anime-input>
+                        <anime-input class="nand-gate-i1 wps-w0-o2"></anime-input>
+                        <anime-box anime-box-bordering anime-input-targeting anime-coloring>
+                            <anime-input class="nand-gate-o wps-w1-i0"></anime-input>
+                        </anime-box>
+                    </div>
+        
+                </div>
+
+                <div class="wps-w0">
+
+                    <div class="nand-gate">
+                        <anime-input class="nand-gate-i0 wps-p0-o1"></anime-input>
+                        <anime-input class="nand-gate-i1 wps-p0-o1"></anime-input>
+                        <anime-input class="nand-gate-o wps-w0-i0"></anime-input>
+                    </div>
+
+                    <div class="nand-gate">
+                        <anime-input class="nand-gate-i0 wps-w1-o0"></anime-input>
+                        <anime-input class="nand-gate-i1 wps-w1-o0"></anime-input>
+                        <anime-input class="nand-gate-o wps-w0-i1"></anime-input>
+                    </div>
+
+                    <div class="nand-gate">
+                        <anime-input class="nand-gate-i0 wps-w0-o0"></anime-input>
+                        <anime-input class="nand-gate-i1 wps-w0-o1"></anime-input>
+                        <anime-input class="nand-gate-o wps-w0-i2"></anime-input>
+                    </div>
+
+                    <div class="nand-gate">
+                        <anime-input class="nand-gate-i0 wps-w0-o2"></anime-input>
+                        <anime-input class="nand-gate-i1 wps-w0-o2"></anime-input>
+                        <anime-box anime-box-bordering anime-input-targeting anime-coloring>
+                            <anime-input class="nand-gate-o wps-w1-i1 wps-p0-i2"></anime-input>
+                        </anime-box>
+                    </div>
+        
+                </div>
+            </div>
+      
+        </div>
+        
+        <details>
+            <summary> 🛈 how 2 load it? </summary>
+            <ol>
+                <li>
+                    <details open>
+                        <summary> bus </summary>
+                        <ul>
+                            <li>
+                                <details open>
+                                    <summary> tag </summary>
+                                    <ul>
+                                        <li> <div class="bus-src"></div> </li>
+                                        <li> <div class="bus-short-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details open>
+                                    <summary> src </summary>
+                                    <ul>
+                                        <li> <div class="bus-import-src"></div> </li>
+                                        <li> <div class="bus-short-import-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+                
+                <li>
+                    <details open>
+                        <summary> bugc </summary>
+                        <ul>
+                            <li>
+                                <details open>
+                                    <summary> tags </summary>
+                                    <ul>
+                                        <li> <div class="bugc-src"></div> </li>
+                                        <li> <div class="bugc-short-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                    <details open>
+                                    <summary> src </summary>
+                                    <ul>
+                                        <li> <div class="bugc-import-src"></div> </li>
+                                        <li> <div class="bugc-short-import-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li>
+                    <details open>
+                        <summary> busccore </summary>
+                        <ul>
+                            <li>
+                                <details open>
+                                    <summary> tag </summary>
+                                    <ul>
+                                        <li> <div class="bugccore-src"></div> </li>
+                                        <li> <div class="bus-short-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details open>
+                                    <summary> src </summary>
+                                    <ul>
+                                        <li> <div class="bugccore-import-src"></div> </li>
+                                        <li> <div class="bugccore-short-import-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+            
+                <li>
+                    <details open>
+                        <summary> nand </summary>
+                        <ul>
+                            <li>
+                                <details open>
+                                    <summary> tag </summary>
+                                    <ul>
+                                        <li> <div class="nand-src"></div> </li>
+                                        <li> <div class="nand-short-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details open>
+                                    <summary> src </summary>
+                                    <ul>
+                                        <li> <div class="nand-import-src"></div> </li>
+                                        <li> <div class="nand-short-import-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+        
+                <li>
+                    <details open>
+                        <summary> wps </summary>
+                        <ul>
+                            <li>
+                                <details open>
+                                    <summary> tag </summary>
+                                    <ul>
+                                        <li> <div class="wps-src"></div> </li>
+                                        <li> <div class="wps-short-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details open>
+                                    <summary> src </summary>
+                                    <ul>
+                                        <li> <div class="wps-import-src"></div> </li>
+                                        <li> <div class="wps-short-import-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+            
+                <li>
+                    <details open>
+                        <summary> css-of-ab </summary>
+                        <ul>
+                            <li>
+                                <details open>
+                                    <summary> tag </summary>
+                                    <ul>
+                                        <li> <div class="css-of-ab-src"></div> </li>
+                                        <li> <div class="css-of-ab-short-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details open>
+                                    <summary> src </summary>
+                                    <ul>
+                                        <li> <div class="css-of-ab-import-src"></div> </li>
+                                        <li> <div class="css-of-ab-short-import-src"></div> </li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+            
+                <li>
+                    <details open>
+                        <summary> about 🛈 </summary>
+                        <div class="about-bugc"></div>
+                    </details>
+                </li>
+            </ol>
+        </details>
+    </body>
+</html>
