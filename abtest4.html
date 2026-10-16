@@ -2,23 +2,13 @@
 <html>
   <head>
     <title> gate 1 </title>
-    <script src="https://xunr3.github.io/af.js" fetchpriority="high"></script>
     <script src="https://xunr3.github.io/ab.js" fetchpriority="high"></script>
   </head>
   <body>  
     <h1> gate 1 </h1>
-    <anime-framework></anime-framework>
     <anime-framework-box-extension></anime-framework-box-extension>
     <style>
       @import url("https://xunr3.github.io/bugc.css");
-
-      .in-out:has(.in-out-in:checked) .in-out-out {
-        animation: var(--anime-on);
-      }
-
-      .in-out:has(.in-out-in:not(:checked)) .in-out-out {
-        animation: var(--anime-off);
-      }
 
       .not-gate:has(.not-gate-in[checked]) .not-gate-out {
         animation: var(--anime-off);
@@ -34,15 +24,15 @@
       
         <anime-box anime-box-bordering anime-coloring>
           <div class="in-out">
-            <input type="checkbox" class="in-out-in">
-            <anime-input class="in-out-out wps-p0-i0"></anime-input>
+            <input type="checkbox" class="in-out-i">
+            <anime-input class="in-out-o wps-p0-i0"></anime-input>
           </div>
         </anime-box>
       
         <anime-box anime-box-bordering anime-coloring>
           <div class="in-out">
-            <input type="checkbox" class="in-out-in">
-            <anime-input class="in-out-out wps-p0-i1"></anime-input>
+            <input type="checkbox" class="in-out-i">
+            <anime-input class="in-out-o wps-p0-i1"></anime-input>
           </div>
       </anime-box>
       
