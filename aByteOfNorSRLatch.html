@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> a byte of NOR S-R Latch </title>
+        <script src="https://xunr3.github.io/devezbus.js" fetchpriority="high"></script>
+    </head>
+    <body>
+        <h1> a byte of NOR S-R Latch </h1>
+
+        <div class="wps-p0 bus">
+            <h2> NOR S-R Latch </h2>
+            
+            <div>
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+                
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div>
+        
+            <div class="wps-w0">
+                <dev-ezbus-nor data-i0="wps-p0-o0" data-i1="wps-w0-o1" data-o="wps-w0-i0"></dev-ezbus-and>
+                <dev-ezbus-nor data-i0="wps-w0-o0" data-i1="wps-p0-o1" data-o="wps-w0-i1 wps-p0-i2"></dev-ezbus-and>
+            </div>
+            
+        </div>
+        
+        <dev-ezbus-info></dev-ezbus-info>
+    </body>
+</html>
