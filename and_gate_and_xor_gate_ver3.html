@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> and gate and xor gate </title>
+        <script src="https://xunr3.github.io/devezbus.js" fetchpriority="high"></script>
+    </head>
+    <body>
+        <h1> and gate and xor gate </h1>
+        <br><br>
+        <dev-ezbus></dev-ezbus>
+
+        <div class="wps-p0 bus">
+            <h2> and gate </h2>
+
+            <div>
+
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div>
+
+            <dev-ezbus-and data-i0="wps-p0-o0" data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-and>
+
+        </div>
+
+        <div class="wps-p0 bus">
+            <h2> xor gate </h2>
+
+            <div>
+
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div>
+
+            <dev-ezbus-xor data-i0="wps-p0-o0" data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-xor>
+
+        </div>
+
+        <dev-ezbus-info></dev-ezbus-info>
+    </body>
+</html>
