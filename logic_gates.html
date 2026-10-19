@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> a logic gates </title>
+        <script src="https://xunr3.github.io/devezbus.js" fetchpriority="high"></script>
+    </head>
+    <body>
+        <h1> a logic gates </h1>
+        <dev-ezbus></dev-ezbus>
+
+        <div class="wps-p0 bus">
+            <h2> not gate </h2>
+            
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o1"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+        
+            <div class="wps-w0"> <!--begin-->
+                <dev-ezbus-not data-i="wps-p0-o0" data-o="wps-p0-i1"></dev-ezbus-not>
+            </div> <!--end-->
+            
+        </div>
+
+        <div class="wps-p0 bus">
+            <h2> nor gate </h2>
+            
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+                
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+        
+            <div class="wps-w0"> <!--begin-->
+                <dev-ezbus-nor data-i0="wps-p0-o0"  data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-nor>
+            </div> <!--end-->
+            
+        </div>
+
+        <div class="wps-p0 bus">
+            <h2> normal form 0010 gate </h2>
+            
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+                
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+        
+            <div class="wps-w0"> <!--begin-->
+                <dev-ezbus-normal-form-0010 data-i0="wps-p0-o0"  data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-normal-form-0010>
+            </div> <!--end-->
+            
+        </div>
+
+        <div class="wps-p0 bus">
+            <h2> normal form 0100 gate </h2>
+            
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+                
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+        
+            <div class="wps-w0"> <!--begin-->
+                <dev-ezbus-normal-form-0100 data-i0="wps-p0-o0"  data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-normal-form-0100>
+            </div> <!--end-->
+            
+        </div>
+
+        <div class="wps-p0 bus">
+            <h2> xor gate </h2>
+            
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+                
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+        
+            <div class="wps-w0"> <!--begin-->
+                <dev-ezbus-xor data-i0="wps-p0-o0"  data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-xor>
+            </div> <!--end-->
+            
+        </div>
+
+        <div class="wps-p0 bus">
+            <h2> nand gate </h2>
+            
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+                
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+        
+            <div class="wps-w0"> <!--begin-->
+                <dev-ezbus-nand data-i0="wps-p0-o0"  data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-nand>
+            </div> <!--end-->
+            
+        </div>
+
+        <div class="wps-p0 bus">
+            <h2> and gate </h2>
+            
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+                
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+        
+            <div class="wps-w0"> <!--begin-->
+                <dev-ezbus-and data-i0="wps-p0-o0"  data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-and>
+            </div> <!--end-->
+            
+        </div>
+
+        <div class="wps-p0 bus">
+            <h2> nxor gate </h2>
+            
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+                
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+        
+            <div class="wps-w0"> <!--begin-->
+                <dev-ezbus-nxor data-i0="wps-p0-o0"  data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-nxor>
+            </div> <!--end-->
+            
+        </div>
+
+        <div class="wps-p0 bus">
+            <h2> normal form 1011 gate </h2>
+            
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+                
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+        
+            <div class="wps-w0"> <!--begin-->
+                <dev-ezbus-normal-form-1011 data-i0="wps-p0-o0"  data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-normal-form-1011>
+            </div> <!--end-->
+            
+        </div>
+
+        <div class="wps-p0 bus">
+            <h2> normal form 1101 gate </h2>
+            
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+                
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+        
+            <div class="wps-w0"> <!--begin-->
+                <dev-ezbus-normal-form-1101 data-i0="wps-p0-o0"  data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-normal-form-1101>
+            </div> <!--end-->
+            
+        </div>
+
+        <div class="wps-p0 bus">
+            <h2> or gate </h2>
+            
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+                
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+            
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+        
+            <div class="wps-w0"> <!--begin-->
+                <dev-ezbus-or data-i0="wps-p0-o0"  data-i1="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-or>
+            </div> <!--end-->
+            
+        </div>
+        
+        <dev-ezbus-info></dev-ezbus-info>
+    </body>
+</html> 
