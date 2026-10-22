@@ -257,6 +257,97 @@
 
         </div>
 
+    <div class="wps-p0 bus">
+
+      <h2> half adder </h2>
+
+      <div>
+
+        <dev-ezbus-box detecter-on class="in-out">
+
+          <input type="checkbox" class="in-out-i">
+          <anime-input class="in-out-o wps-p0-i0"></anime-input>
+
+        </dev-ezbus-box>
+
+        <dev-ezbus-box detecter-on class="in-out">
+
+          <input type="checkbox" class="in-out-i">
+          <anime-input class="in-out-o wps-p0-i1"></anime-input>
+
+        </dev-ezbus-box>
+
+        <dev-ezbus-box detecter-on non-checkbox>
+
+          <anime-input class="wps-p0-o2"></anime-input>
+
+        </dev-ezbus-box>
+
+        <dev-ezbus-box detecter-on non-checkbox>
+
+          <anime-input class="wps-p0-o3"></anime-input>
+
+        </dev-ezbus-box>
+
+      </div>
+
+      <div>
+
+        <dev-ezbus-half-adder data-i0="wps-p0-o0" data-i1="wps-p0-o1" data-carry="wps-p0-i2" data-sum="wps-p0-i3" full-debug-mode></dev-ezbus-half-adder>
+
+      </div>
+
+    </div>
+
+    <div class="wps-p0 bus">
+
+      <h2> full adder </h2>
+
+      <div>
+
+        <dev-ezbus-box detecter-on class="in-out">
+
+          <input type="checkbox" class="in-out-i">
+          <anime-input class="in-out-o wps-p0-i0"></anime-input>
+
+        </dev-ezbus-box>
+
+        <dev-ezbus-box detecter-on class="in-out">
+
+          <input type="checkbox" class="in-out-i">
+          <anime-input class="in-out-o wps-p0-i1"></anime-input>
+
+        </dev-ezbus-box>
+
+        <dev-ezbus-box detecter-on class="in-out">
+
+          <input type="checkbox" class="in-out-i">
+          <anime-input class="in-out-o wps-p0-i2"></anime-input>
+
+        </dev-ezbus-box>
+
+        <dev-ezbus-box detecter-on non-checkbox>
+
+          <anime-input class="wps-p0-o3"></anime-input>
+
+        </dev-ezbus-box>
+
+        <dev-ezbus-box detecter-on non-checkbox>
+
+          <anime-input class="wps-p0-o4"></anime-input>
+
+        </dev-ezbus-box>
+
+      </div>
+
+      <div>
+
+        <dev-ezbus-full-adder data-i0="wps-p0-o0" data-i1="wps-p0-o1" data-i2="wps-p0-o2" data-carry="wps-p0-i3" data-sum="wps-p0-i4" full-debug-mode></dev-ezbus-full-adder>
+
+      </div>
+
+    </div>
+
         <dev-ezbus-info></dev-ezbus-info>
     </body>
 </html> 
