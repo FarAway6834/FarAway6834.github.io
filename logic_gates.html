@@ -348,6 +348,29 @@
 
     </div>
 
+        <div class="wps-p0 bus">
+            <h2> or gate </h2>
+
+            <div> <!--begin-->
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i0"></anime-input>
+                </dev-ezbus-box>
+
+                <dev-ezbus-box class="in-out" detecter-on>
+                    <input type="checkbox" class="in-out-i">
+                    <anime-input class="in-out-o wps-p0-i1"></anime-input>
+                </dev-ezbus-box>
+
+                <dev-ezbus-box non-checkbox detecter-on>
+                    <anime-input class="wps-p0-o2"></anime-input>
+                </dev-ezbus-box>
+            </div> <!--end-->
+
+            <dev-ezbus-srlatch data-set="wps-p0-o0" data-reset="wps-p0-o1" data-o="wps-p0-i2"></dev-ezbus-srlatch>
+
+        </div>
+
         <dev-ezbus-info></dev-ezbus-info>
     </body>
 </html>
